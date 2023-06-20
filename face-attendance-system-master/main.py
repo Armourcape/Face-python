@@ -69,15 +69,15 @@ class App:
             name = util.recognize(self.most_recent_capture_arr, self.db_dir)
 
             if name in ['unknown_person', 'no_persons_found']:
-                util.msg_box('Ups...', 'Unknown user. Please register new user or try again.')
+                util.msg_box('Hmm', 'Please register new user or try again.')
             else:
-                util.msg_box('Welcome back !', 'Welcome, {}.'.format(name))
+                util.msg_box('Hello!', 'Hey, {}.'.format(name))
                 with open(self.log_path, 'a') as f:
                     f.write('{},{},in\n'.format(name, datetime.datetime.now()))
                     f.close()
 
         else:
-            util.msg_box('Hey, you are a spoofer!', 'You are fake !')
+            util.msg_box('Fake!', 'Fake!')
 
     def logout(self):
 
@@ -92,15 +92,15 @@ class App:
             name = util.recognize(self.most_recent_capture_arr, self.db_dir)
 
             if name in ['unknown_person', 'no_persons_found']:
-                util.msg_box('Ups...', 'Unknown user. Please register new user or try again.')
+                util.msg_box('Hmm', 'Please register new user or try again.')
             else:
-                util.msg_box('Hasta la vista !', 'Goodbye, {}.'.format(name))
+                util.msg_box('Bye!', 'Goodbye, {}.'.format(name))
                 with open(self.log_path, 'a') as f:
                     f.write('{},{},out\n'.format(name, datetime.datetime.now()))
                     f.close()
 
         else:
-            util.msg_box('Hey, you are a spoofer!', 'You are fake !')
+            util.msg_box('Fake!', 'Fake!')
 
 
     def register_new_user(self):
